@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
@@ -9,6 +9,17 @@ import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 
+// Scroll to top component
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -16,6 +27,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       {loading && <BMWLoader onFinish={() => {
         console.log('Loader finished, setting loading to false');
         setLoading(false);
