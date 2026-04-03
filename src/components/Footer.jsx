@@ -15,7 +15,7 @@ const Footer = () => {
       name: 'LinkedIn',
       icon: FaLinkedin,
       url: 'https://linkedin.com/in/shrey-nigam',
-      color: 'hover:text-blue-600'
+      color: 'hover:text-[#009ADA]'
     },
     {
       name: 'Email',
@@ -27,51 +27,46 @@ const Footer = () => {
       name: 'Twitter',
       icon: FaTwitter,
       url: 'https://twitter.com/shrey_nigam',
-      color: 'hover:text-blue-400'
+      color: 'hover:text-[#009ADA]'
     }
   ];
 
   return (
-    <footer className="bg-navy text-white">
-      <div className="container-custom">
+    <footer className="bg-black border-t border-gray-800 text-white">
+      <div className="max-w-7xl mx-auto px-4">
         <div className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Brand Section */}
             <div className="space-y-4">
-              <h3 className="text-2xl font-bold gradient-text">Shrey Nigam</h3>
-              <p className="text-gray-300 leading-relaxed">
+              <h3 className="text-2xl font-bold bmw-gradient-text tracking-wider">SHREY NIGAM</h3>
+              <p className="text-gray-400 leading-relaxed">
                 MERN Stack Developer passionate about creating innovative web solutions 
-                and delivering exceptional user experiences.
+                with precision and performance.
               </p>
             </div>
 
             {/* Quick Links */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Quick Links</h4>
+              <h4 className="text-lg font-bold tracking-wider">QUICK LINKS</h4>
               <ul className="space-y-2">
                 <li>
-                  <a href="/" className="text-gray-300 hover:text-white transition-colors duration-300">
-                    Home
+                  <a href="/" className="text-gray-400 hover:text-[#009ADA] transition-colors duration-300 text-sm tracking-wide">
+                    HOME
                   </a>
                 </li>
                 <li>
-                  <a href="/about" className="text-gray-300 hover:text-white transition-colors duration-300">
-                    About
+                  <a href="/projects" className="text-gray-400 hover:text-[#009ADA] transition-colors duration-300 text-sm tracking-wide">
+                    PROJECTS
                   </a>
                 </li>
                 <li>
-                  <a href="/projects" className="text-gray-300 hover:text-white transition-colors duration-300">
-                    Projects
+                  <a href="/skills" className="text-gray-400 hover:text-[#009ADA] transition-colors duration-300 text-sm tracking-wide">
+                    SKILLS
                   </a>
                 </li>
                 <li>
-                  <a href="/skills" className="text-gray-300 hover:text-white transition-colors duration-300">
-                    Skills
-                  </a>
-                </li>
-                <li>
-                  <a href="/contact" className="text-gray-300 hover:text-white transition-colors duration-300">
-                    Contact
+                  <a href="/contact" className="text-gray-400 hover:text-[#009ADA] transition-colors duration-300 text-sm tracking-wide">
+                    CONTACT
                   </a>
                 </li>
               </ul>
@@ -79,23 +74,23 @@ const Footer = () => {
 
             {/* Contact Info */}
             <div className="space-y-4">
-              <h4 className="text-lg font-semibold">Get In Touch</h4>
+              <h4 className="text-lg font-bold tracking-wider">GET IN TOUCH</h4>
               <div className="space-y-2">
-                <p className="text-gray-300">
-                  <span className="font-medium">Email:</span> shreyn82@gmail.com
+                <p className="text-gray-400 text-sm">
+                  <span className="font-medium text-white">EMAIL:</span> shreyn82@gmail.com
                 </p>
-                <p className="text-gray-300">
-                  <span className="font-medium">Location:</span> Indore, India
+                <p className="text-gray-400 text-sm">
+                  <span className="font-medium text-white">LOCATION:</span> Indore, India
                 </p>
-                <p className="text-gray-300">
-                  <span className="font-medium">Available:</span> Open to opportunities
+                <p className="text-gray-400 text-sm">
+                  <span className="font-medium text-white">STATUS:</span> <span className="text-green-400">Available</span>
                 </p>
               </div>
             </div>
           </div>
 
           {/* Social Links */}
-          <div className="mt-8 pt-8 border-t border-gray-700">
+          <div className="mt-8 pt-8 border-t border-gray-800">
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="flex space-x-6">
                 {socialLinks.map((social) => (
@@ -104,7 +99,7 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`text-gray-400 ${social.color} transition-colors duration-300`}
+                    className="text-gray-400 hover:text-[#009ADA] transition-colors duration-300"
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label={social.name}
@@ -113,8 +108,8 @@ const Footer = () => {
                   </motion.a>
                 ))}
               </div>
-              <p className="text-gray-400 text-sm">
-                © {currentYear} Shrey Nigam. All rights reserved.
+              <p className="text-gray-500 text-sm tracking-wide">
+                © {currentYear} SHREY NIGAM. ALL RIGHTS RESERVED.
               </p>
             </div>
           </div>

@@ -1,82 +1,117 @@
 import { motion } from 'framer-motion';
-import { FaCode, FaServer, FaDatabase, FaTools } from 'react-icons/fa';
+import { FaCode, FaServer, FaDatabase, FaTools, FaRobot, FaCloud } from 'react-icons/fa';
 import SkillBadge from '../components/SkillBadge';
 import { skills } from '../data/skills';
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Frontend Development',
+      title: 'FRONTEND',
       icon: FaCode,
-      color: 'from-blue-500 to-blue-600',
+      color: 'from-[#009ADA] to-[#00A8E8]',
       skills: skills.frontend,
-      description: 'Creating responsive and interactive user interfaces with modern frontend technologies'
+      description: 'Building responsive and interactive user interfaces'
     },
     {
-      title: 'Backend Development',
+      title: 'BACKEND',
       icon: FaServer,
       color: 'from-green-500 to-green-600',
       skills: skills.backend,
-      description: 'Building scalable server-side applications and APIs with robust backend technologies'
+      description: 'Scalable server-side applications and APIs'
     },
     {
-      title: 'Database & Storage',
+      title: 'DATABASE',
       icon: FaDatabase,
       color: 'from-purple-500 to-purple-600',
       skills: skills.database,
-      description: 'Designing and managing databases for optimal performance and data integrity'
+      description: 'Data management and optimization'
     },
     {
-      title: 'Tools & Technologies',
+      title: 'TOOLS',
       icon: FaTools,
       color: 'from-orange-500 to-orange-600',
       skills: skills.tools,
-      description: 'Leveraging modern development tools and cloud platforms for efficient workflows'
+      description: 'Development tools and workflows'
+    },
+    {
+      title: 'AGENTIC AI TOOLS',
+      icon: FaRobot,
+      color: 'from-cyan-500 to-cyan-600',
+      skills: skills.agenticAI,
+      description: 'AI-powered development assistants and tools'
+    },
+    {
+      title: 'DEPLOYMENT',
+      icon: FaCloud,
+      color: 'from-pink-500 to-pink-600',
+      skills: skills.deployment,
+      description: 'Cloud platforms and deployment services'
     }
   ];
 
-  const softSkills = [
-    { skill: 'Problem Solving', level: 95 },
-    { skill: 'Team Collaboration', level: 90 },
-    { skill: 'Communication', level: 88 },
-    { skill: 'Project Management', level: 85 },
-    { skill: 'Adaptability', level: 92 },
-    { skill: 'Quick Learning', level: 95 }
-  ];
-
   return (
-    <div className="min-h-screen pt-20">
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-blue-50 to-white">
-        <div className="container-custom">
+    <div className="min-h-screen bg-black pt-20">
+      {/* Hero Section with Video Background */}
+      <section className="relative bg-gradient-to-b from-black via-gray-900 to-black overflow-hidden">
+        {/* YouTube Video Background */}
+        <div className="absolute inset-0 w-full h-full">
+          <iframe
+            className="absolute top-1/2 left-1/2 w-[100vw] h-[100vh] pointer-events-none"
+            style={{
+              transform: 'translate(-50%, -50%)',
+              minWidth: '100%',
+              minHeight: '100%',
+              width: '177.77777778vh',
+              height: '56.25vw',
+            }}
+            src="https://www.youtube.com/embed/zuwOfXU4iPo?autoplay=1&mute=1&loop=1&playlist=zuwOfXU4iPo&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&vq=hd1080"
+            title="BMW Background Video"
+            allow="autoplay; encrypted-media"
+          />
+        </div>
+        
+        {/* Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50" />
+
+        <div className="relative z-10 bmw-container py-20">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="max-w-2xl mb-16"
           >
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              My <span className="gradient-text">Skills</span>
+            <motion.div
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 0.6 }}
+              className="mb-6"
+            >
+              <div className="inline-block px-6 py-2 border-2 border-[#009ADA] rounded-full bg-black/80 backdrop-blur-md">
+                <span className="text-sm font-bold tracking-widest text-[#009ADA]">EXPERTISE</span>
+              </div>
+            </motion.div>
+            
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              TECH <span className="bmw-gradient-text">ARSENAL</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              A comprehensive overview of my technical skills and learning journey. 
-              As a fresher, I'm passionate about continuous learning and staying current with modern technologies.
+            <p className="text-xl text-white leading-relaxed bg-black/60 backdrop-blur-sm px-8 py-4 rounded-lg">
+              Precision-engineered skills for building high-performance applications.
             </p>
           </motion.div>
 
-          {/* Skills Overview Stats */}
+          {/* Stats */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16"
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl"
           >
             {[
-              { number: '14+', label: 'Technologies' },
-              { number: '95%', label: 'Problem Solving' },
-              { number: '100%', label: 'Continuous Learning' },
-              { number: 'Fresher', label: 'Graduate' }
+              { number: '20+', label: 'TECHNOLOGIES' },
+              { number: '95%', label: 'PROBLEM SOLVING' },
+              { number: '100%', label: 'LEARNING' },
+              { number: '∞', label: 'GROWTH' }
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -84,12 +119,12 @@ const Skills = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-center bg-white p-6 rounded-xl shadow-lg"
+                className="bmw-stat-card text-center"
               >
-                <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
+                <div className="text-3xl md:text-4xl font-bold bmw-gradient-text mb-2">
                   {stat.number}
                 </div>
-                <div className="text-gray-600 font-medium">
+                <div className="text-white font-bold text-sm tracking-widest">
                   {stat.label}
                 </div>
               </motion.div>
@@ -99,23 +134,8 @@ const Skills = () => {
       </section>
 
       {/* Technical Skills */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Technical <span className="gradient-text">Expertise</span>
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              My proficiency across different technology stacks and development areas
-            </p>
-          </motion.div>
-
+      <section className="bmw-section bg-black">
+        <div className="bmw-container">
           <div className="space-y-16">
             {skillCategories.map((category, categoryIndex) => (
               <motion.div
@@ -128,21 +148,21 @@ const Skills = () => {
               >
                 {/* Category Header */}
                 <div className="text-center">
-                  <div className="inline-flex items-center space-x-3 mb-4">
-                    <div className={`w-12 h-12 bg-gradient-to-r ${category.color} rounded-lg flex items-center justify-center`}>
-                      <category.icon className="text-white" size={24} />
+                  <div className="inline-flex items-center space-x-4 mb-4">
+                    <div className={`w-14 h-14 bg-gradient-to-r ${category.color} rounded-lg flex items-center justify-center`}>
+                      <category.icon className="text-white" size={28} />
                     </div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+                    <h3 className="text-3xl md:text-4xl font-bold text-white tracking-wider">
                       {category.title}
                     </h3>
                   </div>
-                  <p className="text-gray-600 max-w-2xl mx-auto">
+                  <p className="text-gray-400 max-w-2xl mx-auto tracking-wide">
                     {category.description}
                   </p>
                 </div>
 
                 {/* Skills Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                   {category.skills.map((skill, skillIndex) => (
                     <SkillBadge
                       key={skill.name}
@@ -157,60 +177,9 @@ const Skills = () => {
         </div>
       </section>
 
-      {/* Soft Skills */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              <span className="gradient-text">Soft Skills</span> & Abilities
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Professional skills that complement my technical expertise
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {softSkills.map((skill, index) => (
-              <motion.div
-                key={skill.skill}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-gray-900">
-                    {skill.skill}
-                  </h3>
-                  <span className="text-sm font-medium text-gray-500">
-                    {skill.level}%
-                  </span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: index * 0.1 }}
-                    viewport={{ once: true }}
-                    className="h-full bg-gradient-to-r from-blue-400 to-blue-600 rounded-full"
-                  />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Learning Philosophy */}
-      <section className="section-padding bg-white">
-        <div className="container-custom">
+      {/* Philosophy Section */}
+      <section className="bmw-section bg-gradient-to-b from-black via-gray-900 to-black border-t border-gray-800">
+        <div className="bmw-container">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -218,61 +187,41 @@ const Skills = () => {
             viewport={{ once: true }}
             className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
-              My <span className="gradient-text">Learning</span> Philosophy
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-12">
+              DRIVEN BY <span className="bmw-gradient-text">EXCELLENCE</span>
             </h2>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto">
-                  <FaCode className="text-blue-accent" size={32} />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="bmw-card">
+                <div className="w-16 h-16 bg-[#009ADA]/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <FaCode className="text-[#009ADA]" size={32} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">Hands-on Learning</h3>
-                <p className="text-gray-600">
-                  I believe in learning by doing. Every new technology I encounter 
-                  gets implemented in real projects to understand its practical applications.
+                <h3 className="text-xl font-bold text-white mb-3 tracking-wide">HANDS-ON</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Learning through building. Every technology gets implemented in real projects.
                 </p>
               </div>
               
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto">
-                  <FaServer className="text-green-600" size={32} />
+              <div className="bmw-card">
+                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <FaServer className="text-green-400" size={32} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">Continuous Growth</h3>
-                <p className="text-gray-600">
-                  Technology evolves rapidly, and so do I. I stay updated with the latest 
-                  trends and best practices through courses, conferences, and community engagement.
+                <h3 className="text-xl font-bold text-white mb-3 tracking-wide">CONTINUOUS</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Always evolving. Staying updated with latest trends and best practices.
                 </p>
               </div>
               
-              <div className="space-y-4">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto">
-                  <FaTools className="text-purple-600" size={32} />
+              <div className="bmw-card">
+                <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <FaTools className="text-purple-400" size={32} />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900">Problem-Solving Focus</h3>
-                <p className="text-gray-600">
-                  I approach every challenge as an opportunity to learn something new. 
-                  The goal is not just to solve problems, but to understand the underlying principles.
+                <h3 className="text-xl font-bold text-white mb-3 tracking-wide">PROBLEM-SOLVING</h3>
+                <p className="text-gray-400 leading-relaxed">
+                  Every challenge is an opportunity to learn and grow stronger.
                 </p>
               </div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8"
-            >
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                Always Learning, Always Growing
-              </h3>
-              <p className="text-lg text-gray-700 leading-relaxed">
-                In the fast-paced world of technology, standing still means falling behind. 
-                I'm committed to continuous learning and improvement, always seeking new 
-                challenges that push me to expand my skill set and deliver better solutions.
-              </p>
-            </motion.div>
           </motion.div>
         </div>
       </section>

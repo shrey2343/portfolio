@@ -8,16 +8,15 @@ const ProjectCard = ({ project, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="card p-6 group"
+      className="bmw-project-card group"
     >
-
       {/* Project Content */}
-      <div className="space-y-4">
-        <h3 className="text-xl font-semibold text-gray-900 group-hover:text-blue-accent transition-colors duration-300">
+      <div className="p-6 space-y-4">
+        <h3 className="text-2xl font-bold text-white group-hover:text-[#009ADA] transition-colors duration-300 tracking-wide">
           {project.title}
         </h3>
         
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-gray-400 leading-relaxed">
           {project.description}
         </p>
 
@@ -26,7 +25,7 @@ const ProjectCard = ({ project, index }) => {
           {project.tech.map((tech, techIndex) => (
             <span
               key={techIndex}
-              className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-blue-accent hover:text-white transition-colors duration-300"
+              className="px-3 py-1 bg-gray-800 text-gray-300 text-sm rounded-md hover:bg-[#009ADA] hover:text-white transition-all duration-300 border border-gray-700"
             >
               {tech}
             </span>
@@ -34,26 +33,26 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Action Buttons */}
-        <div className={`flex ${project.liveUrl ? 'space-x-3' : 'justify-center'} pt-2`}>
+        <div className={`flex ${project.liveUrl ? 'space-x-3' : 'justify-center'} pt-4`}>
           {project.liveUrl && (
             <a
               href={project.liveUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-accent text-white rounded-lg hover:bg-blue-600 transition-colors duration-300 text-sm font-medium"
+              className="flex items-center space-x-2 px-4 py-2 bg-[#009ADA] text-white rounded-sm hover:bg-[#00A8E8] transition-colors duration-300 text-sm font-bold tracking-wider"
             >
               <FaExternalLinkAlt size={14} />
-              <span>Live Demo</span>
+              <span>LIVE DEMO</span>
             </a>
           )}
           <a
             href={project.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center space-x-2 px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition-colors duration-300 text-sm font-medium"
+            className="flex items-center space-x-2 px-4 py-2 border border-gray-700 text-gray-300 rounded-sm hover:bg-gray-800 hover:border-gray-600 transition-all duration-300 text-sm font-bold tracking-wider"
           >
             <FaGithub size={14} />
-            <span>View Code</span>
+            <span>CODE</span>
           </a>
         </div>
       </div>
